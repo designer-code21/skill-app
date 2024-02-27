@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import PageTitle from '../Components/PageTitle';
 import CustomModal from '../Components/CustomModal';
 import AccordionBlock from '../Components/AccordionBlock';
 import CounterState from '../Components/CounterState';
@@ -7,6 +8,7 @@ import CounterAlpha from '../Components/CounterAlpha';
 import VideoBlock from '../Components/VideoBlock';
 import AccordionSample from '../Components/AccordionSample';
 import QtyCounter from '../Components/QtyCounter';
+import Contribution from '../Components/Contribution';
 
 export default function Support() {
   const [visibility, setVisibility]=useState(false)
@@ -15,7 +17,9 @@ export default function Support() {
   }
 
   return (
-    <section className="modal-wrap">
+    <main className="page-body">
+      <PageTitle pageTitle="Support" />
+      <section className="support-content py-24">
       <div className="container">
         <div className="modal-main">
           <div className="modal-btn">
@@ -35,6 +39,7 @@ export default function Support() {
         <VideoBlock />
         <QtyCounter min={1} max={10} initial={1} />
       </div>
-    </section>
+      </section>
+    </main>
   )
 }

@@ -1,7 +1,8 @@
 import React from 'react'
+import PageTitle from '../Components/PageTitle'
 
 export default function Events() {
   return (
-    <div>Events</div>
+    <PageTitle pageTitle="Events" />
   )
 }

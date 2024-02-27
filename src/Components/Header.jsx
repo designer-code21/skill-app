@@ -1,16 +1,40 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import {useLocation, Link} from 'react-router-dom'
-
+import Logo from '../images/holity.svg'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ');
 }
-export default function Header() {
 
+export default function Header() {
     const location = useLocation();
+// useEffect(() => {
+//     // Extract page name from the location path
+//     const pageName = location.pathname.substring(1); // Remove the leading slash
+//     // Remove previous page classes from body
+//     document.body.classList.forEach(className => {
+//       if (className.startsWith('page-')) {
+//         document.body.classList.remove(className);
+//       }
+//     });
+//     // Add new page class to body
+//     document.body.classList.add(`page-${pageName || 'home'}`);
+//   }, [location]);
+
+useEffect(() => {
+    const pageName = location.pathname.substring(1);
+
+    document.body.classList.forEach(className => {
+        if(className.startsWith('page-')){
+            document.body.classList.remove(className);
+        }
+    });
+    document.body.classList.add(`page-${pageName || 'home'}`)
+}, [location])
+    // const location = useLocation();
     // const originPath = window.location.origin
     // console.log(location)
     const navigation=[
@@ -34,7 +58,7 @@ export default function Header() {
                     <div className='logo flex justify-between items-center flex-grow md:flex-grow-0'>
                         <a href="/">
                             <span className='sr-only'>Workflow</span>
-                            <img src={require("../images/logo1.png")} className='w-48' alt="" />
+                            <img src={Logo} className='w-48' alt="" />
                         </a>
                         <div className="-mr-2 flex items-center md:hidden">
                             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -72,7 +96,7 @@ export default function Header() {
                                 <div className='rounded-lg shadow-md bg-white ring1 ring-black ring-opacity-5 overflow-hidden'>
                                     <div className='px-5 pt-4 flex items-center justify-between'>
                                         <div>
-                                            <img src={require("../images/logo1.png")} className='h-auto w-24' alt="" />
+                                            <img src={Logo} className='h-auto w-24' alt="" />
                                         </div>
                                         <div className="-mr-2">
                                             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">

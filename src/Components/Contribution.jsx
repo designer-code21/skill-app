@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Contribution() {
   return (
-    <section className="contri-wrap md:py-36 bg-pista relative py-20">
+    <section className="contri-wrap md:py-36 bg-limeLight relative py-20">
         <div className="layer absolute right-0 -top-36 hidden sm:block">
             <img src={require("../images/layer2.png")} alt="" className='object-cover object-x-14' />
         </div>

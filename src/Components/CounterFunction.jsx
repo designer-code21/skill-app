@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 export default function CounterFunction({counter, min, max}) {
     const[count, setCount]=useState(counter);
     useEffect( () => {
-      console.log('UseEffect')
+      // console.log('UseEffect')
       setCount(count)
     }, [])
   return (

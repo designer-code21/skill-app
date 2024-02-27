@@ -1,7 +1,8 @@
 import React from 'react'
+import PageTitle from '../Components/PageTitle'
 
 export default function Contact() {
   return (
-    <div>Contact Us</div>
+    <PageTitle pageTitle="Contact" />
   )
 }
