@@ -10,6 +10,7 @@ import Support from './Pages/Support';
 import Events from './Pages/Events';
 import Contact from './Pages/Contact';
 import Expertise from './Pages/Expertise';
+import ErrorPage from './Pages/ErrorPage';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path='/events' element={<Events/>} />
           <Route path='/contact' element={<Contact/>} />
           <Route path='/expertise' element={<Expertise/>} />
+          <Route path='*' element={<ErrorPage />} />
       </Routes>
       <Footer/>
     </Router>
