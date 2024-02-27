@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Fragment } from 'react'
-import { Popover, Transition, Tab, Dialog } from '@headlessui/react'
+import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import {useLocation} from 'react-router-dom'
+import {useLocation, Link} from 'react-router-dom'
 
 
 function classNames(...classes) {
@@ -11,8 +11,8 @@ function classNames(...classes) {
 export default function Header() {
 
     const location = useLocation();
-    const originPath = window.location.origin
-    // console.log(originPath)
+    // const originPath = window.location.origin
+    // console.log(location)
     const navigation=[
         {id: 1, menu: 'Home', link:'/'},
         {id: 2, menu: 'About', link:'/about'},
@@ -24,7 +24,7 @@ export default function Header() {
     // const location = useLocation();
     const {pathname} = location
     // Item can be shown active using code mentioned below too.
-    // const pathName = location.pathname;
+    // const pathName = location.pathname;  
   return (
 
     <header className='py-3'>
@@ -34,7 +34,7 @@ export default function Header() {
                     <div className='logo flex justify-between items-center flex-grow md:flex-grow-0'>
                         <a href="/">
                             <span className='sr-only'>Workflow</span>
-                            <img src={require("../images/logo1.png")} className='w-48' />
+                            <img src={require("../images/logo1.png")} className='w-48' alt="" />
                         </a>
                         <div className="-mr-2 flex items-center md:hidden">
                             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -47,8 +47,8 @@ export default function Header() {
                         <ul>
                             {navigation.map((item) => (
                                 <li key={item.menu} className="inline-block lg:ml-9 ml-4 first:ml-0">
-                                    <a  href={item.link} className= {classNames(
-                                    "block font-regular text-nightBlue font-roboto capitalize relative after:h-0.5 after:w-full after:bg-tangy after:absolute after:bottom-0 pb-2 after:content[attr(after)] after:left-0 after:rounded-xl after:scale-x-0 after:ease-in-out after:duration-500 hover:after:scale-x-100", pathname === item.link ? "after:scale-x-100":""  )}>{item.menu}</a>
+                                    <Link  to={item.link} className= {classNames(
+                                    "block font-regular text-nightBlue font-roboto capitalize relative after:h-0.5 after:w-full after:bg-tangy after:absolute after:bottom-0 pb-2 after:content[attr(after)] after:left-0 after:rounded-xl after:scale-x-0 after:ease-in-out after:duration-500 hover:after:scale-x-100", pathname === item.link ? "after:scale-x-100":""  )}>{item.menu}</Link>
                                 </li>
                             ))}
                         </ul>
@@ -72,7 +72,7 @@ export default function Header() {
                                 <div className='rounded-lg shadow-md bg-white ring1 ring-black ring-opacity-5 overflow-hidden'>
                                     <div className='px-5 pt-4 flex items-center justify-between'>
                                         <div>
-                                            <img src={require("../images/logo1.png")} className='h-auto w-24' />
+                                            <img src={require("../images/logo1.png")} className='h-auto w-24' alt="" />
                                         </div>
                                         <div className="-mr-2">
                                             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -83,7 +83,7 @@ export default function Header() {
                                     </div>
                                     <div className="p-2 space-y-1">
                                         {navigation.map((item) => (
-                                            <a key={item.id} href={item.link} className="font-regular text-base text-nightBlue px-3 py-2 block capitalize">{item.menu}</a>
+                                            <Link key={item.id} to={item.link} className="font-regular text-base text-nightBlue px-3 py-2 block capitalize">{item.menu}</Link>
                                         ))}
                                     </div>
                                     <div className='login-btn'>

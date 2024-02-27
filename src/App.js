@@ -13,7 +13,7 @@ import Expertise from './Pages/Expertise';
 
 
 function App() {
-  const pathname = window.location.pathname
+  // const pathname = window.location.pathname
   // console.log(pathname);
   return (
     <Router>

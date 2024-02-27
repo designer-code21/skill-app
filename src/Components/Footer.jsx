@@ -26,13 +26,13 @@ export default function Footer() {
                         <h4 className="text-3xl mb-5">Socials</h4>
                         <ul>
                             <li className='text-seaGreen font-roboto mb-3'>
-                                <a href="" className='hover:text-tangy ease-in-out duration-300'>Facebook</a>
+                                <a href="/" className='hover:text-tangy ease-in-out duration-300'>Facebook</a>
                             </li>
                             <li className='text-seaGreen font-roboto mb-3'>
-                                <a href="" className='hover:text-tangy ease-in-out duration-300'>Instagram</a>
+                                <a href="/" className='hover:text-tangy ease-in-out duration-300'>Instagram</a>
                             </li>
                             <li className='text-seaGreen font-roboto'>
-                                <a href="" className='hover:text-tangy ease-in-out duration-300'>Twitter</a>
+                                <a href="/" className='hover:text-tangy ease-in-out duration-300'>Twitter</a>
                             </li>
                         </ul>
                     </div>
@@ -42,7 +42,7 @@ export default function Footer() {
                         <h4 className="text-3xl mb-5">Subscribe</h4>
                         <form action="" className='sm:flex justify-between gap-3'>
                             <label htmlFor="" className='relative w-full block'>
-                                <input type="text" className="form-input border-0 border-b-2 border-gray-200 px-0 5 w-full block focus:ring-0 focus:border-tangy h-12 font-roboto text-lg text-nightBlue" placeholder="Your Email Address"/>
+                                <input type="text" className="form-input border-0 border-b-2 border-gray-200 px-0 5 w-full block focus:ring-0 focus:border-tangy  h-12 font-roboto text-lg text-nightBlue" placeholder="Your Email Address"/>
                             </label>
                             <div className="submit-btn sm:mt-0 mt-4">
                                 <input type="submit" value="Sign Up" className='!py-3 !px-8 h-12 inline-block solid-btn right-0 top-0 cursor-pointer' />
@@ -52,7 +52,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="copy mt-10">
-                <p className='font-roboto text-sm font-xregular'>&copy; 2022 Holity. <a href="" className='text-seaGreen hover:text-tangy transition-all ease-in-out duration-300 '>Privacy Policy</a></p>
+                <p className='font-roboto text-sm font-xregular'>&copy; 2022 Holity. <a href="/" className='text-seaGreen hover:text-tangy transition-all ease-in-out duration-300 '>Privacy Policy</a></p>
             </div>
         </div>
     </footer>
